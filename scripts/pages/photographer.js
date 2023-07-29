@@ -22,18 +22,44 @@ function getPhotographerId() {
   return params.photographer;
 }
 
+
+// displaying photographer work (medias)
+async function displayWorkData(medias) {
+  const photographerWork = document.querySelector(".photograph-work");
+
+  const works = medias.filter((media) => media.photographerId == getPhotographerId());
+
+  works.forEach((media) => {
+    const photographerWorkModel = photographerWorkFactory(media);
+    const userWorkDOM = photographerWorkModel.getUserWorkDOM();
+    photographerWork.appendChild(userWorkDOM);
+  });
+}
+
+// function to add likes
+function like(event) {
+  const target = event.currentTarget;
+
+  if (!target.hasAttribute("liked")) {
+    target.setAttribute("liked", "");
+    target.querySelector(".number-likes").textContent =
+      parseInt(target.textContent) + 1;
+    updateTotalLikes();
+  }
+}
+
+// init function
 async function init() {
   // retrieving photographers data
-  const { photographers } = await getPhotographers();
+  const { photographers, media } = await getPhotographers();
 
   // finding the photograph based on the id parameter of their page
-  const photographer = photographers.find(
-    (photographe) => photographe.id == getPhotographerId()
-  );
+  const photographer = photographers.find((photographe) => photographe.id == getPhotographerId());
 
   displayPhotographerData(photographer);
+  displayWorkData(media);
 }
 
 init();
 
-
+  

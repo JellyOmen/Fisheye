@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/d21300426d.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe</title>
   </head>
   <body>
@@ -28,7 +29,7 @@
       </a>
     </header>
 
-    <main id="main">
+  <main id="main">
       <section class="photograph-header">
         <button
           class="contact_button"
@@ -40,7 +41,18 @@
           Contact me
         </button>
       </section>
+
+      <section class="photograph-work"></section>
+
+      <div class="likesAndPrice">
+        <span class="totalLikes">
+          <span class="totalLikesNumber"></span>
+          <img src="assets/icons/heart.svg" alt="likes" />
+        </span>
+        <span class="pricePerDay">$ /day</span>
+      </div>
+  </main>
     <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/factories/photographer.js"></script>
-  </body>
+    <script src="scripts/factories/photographerWork.js"></script>
 </html>

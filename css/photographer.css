@@ -56,117 +56,97 @@ h2 {
   color: black;
 }
 
-/* Dropdown menu */
-.dropdown-label {
-  margin-left: 100px;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 23px;
+/* Photograph images */
+.photograph-work {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  gap: 95px;
+  margin: 30px 100px 100px;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin-left: 25px;
-  padding: 0;
-  box-sizing: border-box;
-  width: 170px;
-  background: #911c1c;
-  border-radius: 5px;
-  text-align: start;
-  font-size: 18px;
-  font-family: inherit;
-  font-weight: bold;
-  line-height: 23px;
-  color: #ffffff;
-  appearance: none;
-  cursor: pointer;
-  border: none;
-}
-
-.dropdown button {
-  display: block;
-  padding: 14px 20px 14px;
-  width: 100%;
+.thumb-imgfull {
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  border: 0;
-  background: none;
-  text-align: inherit;
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  font-weight: inherit;
-  cursor: pointer;
-  transition: background 0.3s;
+  min-width: 0;
 }
 
-.dropdown button:hover {
-    background: #db8876;
-    border-radius: 5px;
-  }
+.thumb-imgfull .thumb-img {
+  cursor: pointer;
+}
 
-.dropdown .arrow {
-  position: absolute;
-  right: 20px;
-  top: 15px;
+.thumb-img {
+  object-fit: cover;
+  border-radius: 5px;
+  background: grey;
+  width: 100%;
+  height: 300px;
+}
+
+.thumb-imgfull figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.thumb-imgfull h2 {
+  margin: 10px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Like images */
+.likes {
+  margin: 10px 0 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.likes[liked] {
+  cursor: default;
+}
+
+.likes img {
+  height: 18px;
+  width: 18px;
   object-fit: contain;
-  width: 16px;
-  height: 23px;
-  transform: none;
-  pointer-events: none;
+  transition: 0.2s;
 }
 
-.dropdown-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  z-index: 1;
-  background: #911c1c;
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-radius: 0 0 5px 5px;
+.likes[liked] img {
+  transform: scale(1.4);
+  filter: drop-shadow(0 4px 1px rgb(0 0 0/0.2));
 }
 
-.dropdown-options li {
-  position: relative;
-  padding: 14px 20px 14px;
+.number-likes {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
+  margin-right: 6px;
+  color: #911c1c;
 }
 
-.dropdown-options li:hover {
-    background: #db8876;
-    transition: background 0.3s;
-    border-radius: 5px;
-  }
-
-
-.dropdown-options li::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 10px;
-  width: 150px;
-  height: 1px;
-  background: white;
+/* Likes and price */
+.likesAndPrice {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  right: 35px;
+  bottom: 0;
+  height: 68px;
+  padding: 0 30px;
+  background: #db8876;
+  border-radius: 5px 5px 0 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
 }
 
-.dropdown-open {
-  border-radius: 5px;
-}
-
-.dropdown-open .arrow {
-  transform: rotate(180deg);
-  transition: 0.3s;
-}
-
-.dropdown-open .dropdown-options {
-  display: block;
-}
-
-.dropdown-open .dropdown-hide {
-  display: none;
+.totalLikes img {
+  filter: brightness(0);
 }
 
 /* Modal css  */
