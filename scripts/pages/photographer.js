@@ -44,7 +44,6 @@ function like(event) {
     target.setAttribute("liked", "");
     target.querySelector(".number-likes").textContent =
       parseInt(target.textContent) + 1;
-    updateTotalLikes();
   }
 }
 

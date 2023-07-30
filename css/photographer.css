@@ -112,7 +112,7 @@ h2 {
   height: 18px;
   width: 18px;
   object-fit: contain;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 .likes[liked] img {
