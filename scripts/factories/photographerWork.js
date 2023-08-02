@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 function photographerWorkFactory(data) {
-  const { title, image, video, likes } = data;
+  const { title, image, video, likes, date, altText } = data;
   const picture = `assets/images/${image}`;
   const videoMedia = `assets/images/${video}`;
 
@@ -18,6 +18,12 @@ function photographerWorkFactory(data) {
       media.title = title;
       media.setAttribute("preload", "metadata");
     }
+
+    media.setAttribute("onclick", "lightbox(event)");
+    media.setAttribute("aria-haspopup", "dialog");
+    media.setAttribute("aria-label", altText);
+    media.setAttribute("tabindex", 0);
+    media.dataset.date = date;
     media.className = "thumb-img";
 
     return media;
