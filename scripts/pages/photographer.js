@@ -1,12 +1,10 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 // fetching photographers data
-async function getPhotographers() {
+function getPhotographers() {
   return fetch("data/photographers.json").then((response) => response.json());
 }
 
 // displaying photographers profile data
-async function displayPhotographerData(photographer) {
+function displayPhotographerData(photographer) {
   const photographerHeader = document.querySelector(".photograph-header");
   const pricePerDay = document.querySelector(".pricePerDay");
 
@@ -22,7 +20,7 @@ async function displayPhotographerData(photographer) {
 }
 
 // displaying photographer work (medias)
-async function displayWorkData(medias) {
+function displayWorkData(medias) {
   const photographerWork = document.querySelector(".photograph-work");
 
   const works = medias.filter(
@@ -55,7 +53,7 @@ function like(event) {
 }
 
 // function to update the total number of likes
-async function updateTotalLikes() {
+function updateTotalLikes() {
   const pictures = document.querySelector(".photograph-work");
   const likes = pictures.querySelectorAll(".number-likes");
   const totalLikesNumber = document.querySelector(".totalLikesNumber");
@@ -76,8 +74,6 @@ function dropdown(event) {
   } else {
     button.setAttribute("aria-expanded", false);
   }
-
-  setTimeout(() => button.focus(), 50);
 }
 // selectDropdownOption function
 function selectDropdownOption(event) {
@@ -110,7 +106,6 @@ function selectDropdownOption(event) {
   dropdownList.setAttribute("aria-activedescendant", target.id);
 
   orderWork();
-  setTimeout(() => dropdown.querySelector("button").focus(), 50);
 }
 
 function orderWork() {

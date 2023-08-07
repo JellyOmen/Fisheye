@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 function photographerWorkFactory(data) {
   const { title, image, video, likes, date, altText } = data;
   const picture = `assets/images/${image}`;
